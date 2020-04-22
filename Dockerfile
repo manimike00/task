@@ -24,9 +24,10 @@ COPY . .
 # Setup Configs
 RUN mv nginx.conf /etc/nginx/nginx.conf && \
     mv start-container /usr/local/bin/start-container && \
-    bash openssl.sh && \
-    rm openssl.sh && \
     chmod +x /usr/local/bin/start-container
+
+# Create SSL Self-signed Certs
+RUN bash openssl.sh && rm openssl.sh
 
 # Add User
 RUN adduser -D -H -u 1000 -s /bin/bash www-data -G www-data && \
