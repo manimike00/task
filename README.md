@@ -6,12 +6,8 @@ Descripton:
 
 Working:
 
+    $ bash openssl.sh
+
     $ docker build -t image-name:tag .
 
     $ docker run -itd -p 8880:8880 -p 8443:8443 --name demo image-name:tag
-
-Optional:
-
-To create SSL certs.
-
-    $ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout nginx-selfsigned.key -out nginx-selfsigned.crt
