@@ -1,7 +1,7 @@
 FROM alpine:3.11
 
 # Install Dependencies
-RUN apk --no-cache add openssl curl ca-certificates
+RUN apk --no-cache add openssl curl ca-certificates bash
 
 # Install Nginx mainline
 RUN printf "%s%s%s\n" \
@@ -24,6 +24,8 @@ COPY . .
 # Setup Configs
 RUN mv nginx.conf /etc/nginx/nginx.conf && \
     mv start-container /usr/local/bin/start-container && \
+    bash openssl.sh && \
+    rm openssl.sh && \
     chmod +x /usr/local/bin/start-container
 
 # Add User

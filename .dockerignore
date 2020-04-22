@@ -1,5 +1,4 @@
 .git
 .gitignore
-openssl.sh
 Dockerfile
 README.md

@@ -6,8 +6,6 @@ Descripton:
 
 Working:
 
-    $ bash openssl.sh
-
     $ docker build -t image-name:tag .
 
     $ docker run -itd -p 8880:8880 -p 8443:8443 --name demo image-name:tag
